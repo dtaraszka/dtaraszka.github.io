@@ -1,0 +1,60 @@
+html{
+    /* FONT-SIZE */
+    --font-size20:20px;
+    --font-size22:22px;
+    --font-size24:24px;
+    --font-size26:26px;
+    --font-size30:30px;
+    --font-size34:34px;
+    --font-size40:40px;
+    --font-size50:50px;
+
+}
+/* 320px */
+h1{
+    font-size: var(--font-size22);
+    margin-top: 100px;
+}
+a{
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: var(--font-size20);
+    text-transform: uppercase;
+    font-weight: bold;
+    color: green;
+}
+/* 360px */
+@media(min-width:360px){
+    h1{
+        font-size: var(--font-size24);
+    }
+}
+/* 768px */
+@media(min-width:768px){
+    h1{
+        font-size: var(--font-size30);
+    }
+    a{
+        font-size: var(--font-size26);
+    }
+}
+/* 1024px */
+@media(min-width: 1024px){
+    h1{
+        font-size: var(--font-size40);
+    }
+    a{
+        cursor: pointer;
+    }
+}
+/* 1600px */
+@media(min-width: 1600px){
+    h1{
+        font-size: var(--font-size50);
+    }
+    a{
+        font-size: var(--font-size34);
+    }
+}

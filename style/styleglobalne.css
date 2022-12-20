@@ -1,0 +1,45 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background-color: gray;
+}
+/* ERROR*/
+.error{
+    color: red;
+    margin: 2px;
+    text-align: center;
+}
+/* ERROR LOGOWANIE */
+.label-error{
+    display: block;
+    padding: 10px 15px 0;
+}
+/*  */
+
+h1{
+    font-size: 40px;
+    text-align: center;
+}
+.aform{
+    border: 3px double black;
+
+}
+.ginput{
+    width: 240px;
+}
+.btn{
+    cursor: pointer;
+    padding: 2px;
+    border: 2px solid black;
+}
+
+@media(min-width: 768px){
+    .ginput{
+        width: 260px;
+    }
+}

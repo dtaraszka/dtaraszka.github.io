@@ -1,0 +1,597 @@
+
+html{
+    /* FONT-SIZE */
+    --font-size16: 16px;
+    --font-size18: 18px;
+    --font-size20: 20px;
+    --font-size22: 22px;
+    --font-size24: 24px;
+    --font-size26: 26px;
+    --font-size28: 28px;
+    --font-size30: 30px;
+    --font-size32: 32px;
+    --font-size36: 36px;
+    --font-size46: 46px;
+ 
+    /* MARGIN */
+    --margin0auto: 0 auto;
+ 
+    /* PADDING */
+    --padding3:3px;
+    --padding5: 5px;
+    --padding-left3: 3px;
+ 
+    /* BORDER */
+    --border2solid: 2px solid;
+    --border3double: 3px double;
+    --border-bot2solid: 2px solid;
+    --border-width6: 6px;
+
+    /* BOX-SHADOW */
+    --box-shadow-kalkulator: 0 0 25px rgb(87, 87, 98);
+    --box-shadow-menu1: 0 0 5px rgb(35, 31, 31);
+    --box-shadow-menu2: 0 0 7px rgb(35, 31, 31);
+
+    /* KOLORY */
+    --font-color:black;
+    --bg-color: #f2f2f2;
+    --border-color: rgb(26, 23, 23);
+    --bg-nav: #888;
+} 
+html[motyw="dark"] {
+    /* BOX-SHADOW */
+    --box-shadow-kalkulator: 0 0 25px rgb(92, 92, 96);
+    --box-shadow-menu1: 0 0 5px rgb(203, 195, 195);
+    --box-shadow-menu2: 0 0 7px rgb(203, 195, 195);
+    /* KOLORY */
+    --font-color:white;
+    --bg-color: #222020;
+    --border-color: rgb(225, 214, 214);
+    --bg-nav: #555;
+} 
+body{
+    background-color: var(--bg-color);
+    color: var(--font-color);
+}
+
+/* 320px */
+.wrap-motyw {
+    position: absolute;
+    top: 28px;
+    right: 40px;
+    height: 50px;
+
+}
+.wrap-motyw__span{
+    position: absolute;
+    font-size: var(--font-size16);
+    top: -24px;
+    left: -34px;
+    width: 120px;
+    display: block;
+}
+.wrap-motyw__label {
+    display: inline-block;
+    height: 30px;
+    width: 50px;
+    position: relative;
+    
+}
+.wrap-motyw__label .cbox {
+    display: none;
+}
+.wrap-motyw__slider {
+    background-color: black;
+    position: absolute;
+    top: -4px;
+    left: -10px; 
+    bottom: 0;       
+    right: -2px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.wrap-motyw__slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: 0.4s;
+    width: 26px;
+}
+.wrap-motyw__slider.round {
+    border-radius: 10%;
+}
+
+.wrap-motyw__slider.round:before {
+    border-radius: 10%;
+}
+
+.cbox:checked+.wrap-motyw__slider {
+    background-color: #308534;
+}
+
+.cbox:checked+.wrap-motyw__slider:before {
+    transform: translateX(26px);
+}
+/* Blur */
+.blur{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    filter: blur(5px);
+}
+/* Menu */
+.menu{
+    position: absolute;
+    top: 15px;
+    left: 40px;
+    display: inline-block;
+    font-size: var(--font-size24);
+    border: var(--border2solid) var(--border-color);
+    cursor: pointer;
+    letter-spacing: 2px;
+    padding: var(--padding3);
+}
+.menu.active+nav{
+    left: 0;
+}
+nav{
+    position: absolute;
+    top: 55px;
+    left: -280px;
+    background-color: var(--bg-nav);
+    color: var(--font-color);
+    width: 260px;
+    text-align: center;
+    z-index: 1;
+    transition: .3s linear;
+}
+/* Zmian nazwy usera */
+.menu__name{
+    margin: 10px 5px 5px ;
+    text-align: center;
+    font-size: var(--font-size20);
+}
+.form-name{
+    position: relative;
+    display: block;
+    margin: var(--margin0auto);
+    border-color:var(--border-color);
+    padding-top: 10px;
+}
+.form-newNamePassw{
+    display: block;
+    font-size: var(--font-size20);
+    padding-left: var(--padding-left3);
+}
+
+/* Zmiana nazwy */
+.form-name__newname{
+    margin: var(--margin0auto);
+}
+.form-name__btn{
+    font-size: var(--font-size16);
+    padding: var(--padding3);
+    /* margin: 10px 0 10px 130px; */
+    margin: 10px 0;
+}
+/* Zmiana hasła */
+.menu__passw{
+    font-size: var(--font-size20);
+    text-align: center;
+    margin: 10px 5px 5px;
+}
+.form-passw{
+    border-color:var(--border-color);
+}
+.form-passw__newpassw{
+    margin: 10px auto;
+}
+.form-passw__btn{
+    font-size: var(--font-size16);
+    padding: var(--padding3);
+    margin: 10px 0;
+}
+/* Usunięcie konta */
+.delete{
+    font-size: var(--font-size16);
+    display: block;
+    padding: var(--padding3);
+    margin: 15px auto 10px;
+}
+/* Wylogowanie */
+.hiperlink-out{
+    display: inline-block;
+    text-decoration: none;
+    color: green;
+    font-size:var(--font-size16);
+    margin: 5px 30px;
+    padding: 5px;
+    border-bottom: 0px solid var(--border-color);
+    transition: .3s linear;
+}
+
+/* Przywitanie */
+.hellow{
+    width: 100%;
+    font-size: var(--font-size28);
+    margin: 60px 0 0;
+    font-weight: bold;
+    text-align: center;
+}
+.nameUser{
+    color: green;
+}
+/* Informacje o dacie i godzinie */
+.info-dt{
+    font-size: var(--font-size18);
+    margin: 20px 0;
+    padding: 5px;
+    text-align: center;
+}
+/* Kalkulator */
+.wrap{
+    margin: 0;
+    width: 100%;
+}
+.form{
+    position: relative;
+    width: 90%;
+    margin: var(--margin0auto);
+    border-color: var(--border-color);
+    box-shadow: var(--box-shadow-kalkulator);
+}
+.form__span{
+    display: block;
+    text-align: center;
+    font-size: var(--font-size22);
+    padding: 5px;
+}
+.form__number{
+    display: block;
+    margin: var(--margin0auto);
+    height: 30px;
+    font-size: var(--font-size20);
+    padding-left: 2px;
+}
+.form__znak{
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size18);
+    margin: 10px auto;
+    text-align: center;
+}
+.form__btn{
+    display: inline-block;
+    font-size: var(--font-size18);
+    padding: 2px;
+    position: absolute;
+    bottom: -40px;
+    /* bottom: 0; */
+    right: 30px;
+}
+.wynik{
+    font-size: var(--font-size20);
+    text-align: center;
+    margin-top: 5px;
+    padding: 5px 5px 2px;
+}
+.wynikborder{
+    display: block;
+    border-bottom: var(--border-bot2solid) var(--border-color);
+    margin: 0 20px 10px;
+}
+.ostrz{
+    color: red;
+}
+
+/* Informacja o usunięciu konta */
+.popup{
+    display: none;
+}
+.popup.active{
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    font-size: var(--font-size20);
+}
+.popup-mini{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    background-color: black;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+.popup-mini__form{
+    text-align: right;
+}
+h2{
+    font-size: var(--font-size24);
+    text-align: center;
+
+}
+.popup-mini__p{
+    text-align: center;
+    margin-top: 5px;
+}
+.popup-mini__input{
+    font-size: var(--font-size18);
+    margin: 15px;
+    padding: var(--padding3);
+    /* text-transform: uppercase; */
+    letter-spacing: 2px;
+}
+.popup-mini__x{
+    position: absolute;
+    top: -30px;
+    right: -25px;
+    font-size: var(--font-size30);
+    width:36px;
+    height: 36px;
+    line-height: 30px;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+}
+/* 360px */
+@media (min-width: 360px){
+/* Menu */
+    nav{
+        top: 60px;
+        left: -300px;
+        width: 280px;
+    }
+    .menu__name{
+        font-size: var(--font-size22);
+    }
+    /* Zmiana hasła */
+    .menu__passw{
+        font-size: var(--font-size22);
+    }
+    /* Wylogowanie */
+    .hiperlink-out{
+        font-size: var(--font-size18);
+    }
+
+    /* Przywitanie */
+    .hellow{
+        font-size: var(--font-size32);
+        margin: 60px 0 0;
+    }
+
+    /* Informacje o dacie i godzinie */
+    .info-dt{
+        font-size: var(--font-size22);
+    }
+    /* Kalkulator */
+    .form__number{
+        height: 34px;
+        font-size: var(--font-size24);
+    }
+    .form__znak{
+        width: 38px;
+        height: 38px;
+        font-size: var(--font-size22);
+    }
+    .form__btn{
+        font-size: var(--font-size20);
+    }
+    .wynik{
+        font-size: var(--font-size24);
+    }
+    .wynikborder{
+        margin: 10px;
+    }
+    /* Informacja o usunięciu konta */
+    .popup-mini__x{
+        top: -20px;
+        right: -15px;
+    }
+}
+/* 768px */
+@media(min-width: 768px){
+/* Menu */
+    .menu{
+        font-size: var(--font-size26);
+    }
+    nav{
+        width: 300px;
+    }
+    .menu__name{
+        font-size: var(--font-size24);
+    }
+    .form-name{
+        width: 95%;
+        box-shadow: var(--box-shadow-menu1);
+    }
+    /* Zmiana hasła */
+    .form-passw{
+        width: 95%;
+        margin: var(--margin0auto);
+        box-shadow: var(--box-shadow-menu1);
+    }
+    /* .form-passw__btn{
+        margin: 10px 0 10px 170px;
+    } */
+    .menu__passw{
+        font-size: var(--font-size24);
+    }
+    /* Informacje o dacie i godzinie */
+    .info-dt{
+        font-size: var(--font-size24);
+    }
+    /* Kalkulator */
+    .form{
+        width: 80%;
+    }
+    .form__span{
+        font-size: var(--font-size24);
+    }
+    .form__number{
+        height: 34px;
+        font-size: var(--font-size22);
+    }
+    .form__znak{
+        width: 45px;
+        height: 45px;
+        font-size: var(--font-size26);
+    }
+    .form__btn{
+        right: 50px;
+    }
+    .wynik{
+        font-size: var(--font-size28);
+    }
+    .wynikborder{
+        margin: 2px 50px 10px;
+    }
+}
+/* 1024 */
+@media(min-width: 1024px){
+        /* Motyw */
+        .wrap-motyw {
+            top: 30px;
+            right: 130px;
+        }
+    /* Menu */
+        .menu{
+            left: 130px;
+        }
+
+        .form-name{
+            border-width: var(--border-width6);
+            box-shadow: var(--box-shadow-menu2);
+        }
+        /* Zmiana hasła */
+        .form-passw{
+            border-width: var(--border-width6);
+            box-shadow: var(--box-shadow-menu2);
+        }
+
+
+        .form-name__btn{
+            cursor: pointer;
+        }
+        .form-passw__btn{
+            cursor: pointer;
+        }
+        /* Usunięcie konta */
+        .delete{
+            cursor: pointer;
+        }
+        /* Wylogowanie */
+        .hiperlink-out{
+            font-size: var(--font-size20);
+        }
+        .hiperlink-out:hover{
+            border-bottom: 2px solid var(--border-color);
+        }
+    
+        /* Przywitanie */
+        .hellow{
+            font-size: var(--font-size36);
+        }
+    
+        /* Informacje o dacie i godzinie */
+        .info-dt{
+            font-size: var(--font-size30);
+        }
+        /* Kalkulator */
+        .form{
+            width: 65%;
+            border-width: var(--border-width6);
+        }
+        .form__span{
+            font-size: var(--font-size26);
+            padding: 5px;
+        }
+        .form__number{
+            height: 38px;
+            font-size: var(--font-size26);
+            padding-left: var(--padding-left3);
+        }
+        .form__znak{
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            font-size: var(--font-size30);
+        }
+        .form__btn{
+            cursor: pointer;
+            font-size: var(--font-size24);
+            bottom: -60px;
+            right:100px;
+        }
+        .wynik{
+            font-size: var(--font-size30);
+        }
+        .wynikborder{
+            margin: 5px 100px 15px;
+        }
+        .popup-mini__input{
+            cursor: pointer;
+        }
+        .popup-mini__x{
+            cursor: pointer;
+        }
+}
+/* 1600px */
+@media(min-width: 1600px){
+            /* Motyw */
+            .wrap-motyw {
+                top: 40px;
+                right: 320px;
+            }
+        /* Menu */
+            .menu{
+                left: 150px;
+                font-size: var(--font-size26);
+            }
+            nav{
+                left: -300px;
+                width: 300px;
+            }
+            /* Przywitanie */
+            .hellow{
+                font-size: var(--font-size46);
+            }
+        
+            /* Informacje o dacie i godzinie */
+            .info-dt{
+                margin: 20px 50px;
+                padding: 10px;
+                text-align: right;
+            }
+            /* Kalkulator */
+            .form{
+                width: 60%;
+            }
+            .form__span{
+                font-size: var(--font-size30);
+                padding: 5px;
+            }
+            .form__number{
+                height: 40px;
+            }
+            .form__btn{
+                right:200px;
+            }
+            .wynik{
+                font-size: var(--font-size36);
+            }
+            .wynikborder{
+                margin: 5px 200px 15px;
+            }
+}

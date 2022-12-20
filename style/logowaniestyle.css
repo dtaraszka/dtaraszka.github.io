@@ -1,0 +1,143 @@
+html{
+    /* FONT-SIZE */
+    --font-size15:15px;
+    --font-size17:17px;
+    --font-size18:18px;
+    --font-size20:20px;
+    --font-size22:22px;
+    --font-size24:24px;
+    --font-size26:26px;
+    --font-size28:28px;
+    --font-size40:40px;
+    --font-size44:44px;
+    --font-size48:48px;
+
+    /* MARGIN */
+    --margin0auto: 0 auto;
+
+    /* PADDING */
+    --padding1: 1px;
+    --padding2: 2px;
+    --padding-left3: 3px;
+    --padding10-20-0: 10px 20px 0;
+
+}
+h1{
+    /* font-size: var(--font-size40); */
+    margin: 60px auto;
+}
+.wrap{
+    width: 100%;
+    margin: 60px 0;
+}
+form{
+    width: 90%;
+    margin: var(--margin0auto);
+}
+.label-input__text{
+    display: block;
+    margin: 10px auto 3px;
+    text-align: center;
+    width: 80%;
+    font-size: var(--font-size24);
+}
+.label-input__form{
+    display: block;
+    margin: var(--margin0auto);
+    height: 30px;
+    font-size: var(--font-size22);
+    padding-left: var(--padding-left3);
+}
+.mini-wrap{
+    margin-top: 10px;
+    text-align: center;
+}
+.btn__register{
+    margin: 4px;
+    height: 100%;
+    font-size: var(--font-size18);
+    letter-spacing: 1px;
+}
+.btn__hiperlink{
+    text-decoration: none;
+    color: black;
+}
+.btn__lub{
+    font-size: var(--font-size15);
+}
+.btn__login{
+    font-size: var(--font-size18);
+    letter-spacing: 1px;
+    margin: 4px;
+    padding: 2px;
+}
+@media(min-width: 360px){
+    form{
+        width: 90%;
+        margin-left:  auto;
+    }
+    .btn__lub{
+        font-size: var(--font-size15);
+    }
+}
+@media(min-width: 768px){
+    h1{
+        font-size: var(--font-size44);
+    }
+    form{
+        width: 50%;
+        border-width: 6px;
+    }
+    .label-input__text{
+        margin-top: 12px;
+        
+    }
+    .btn-label{
+        display: block;
+        width: 85%;
+        margin: var(--margin0auto);
+    }
+}
+@media(min-width: 1024px){
+    form{
+        width: 50%;
+        margin-left:  auto;
+    }
+    .mini-wrap{
+        margin: 10px;
+    }
+    
+    .label-input__text{
+        font-size: var(--font-size26);
+    }
+    .label-input__form{
+        font-size: var(--font-size24);
+    }
+    .label-error{
+        font-size: var(--font-size18);
+    }
+}
+@media(min-width: 1600px){
+    h1{
+        font-size: var(--font-size48);
+    }
+    form{
+        width: 55%;
+    }
+    .btn-label{
+        display: block;
+        width: 90%;
+        margin: var(--margin0auto);
+    }
+    
+    .label-input__text{
+        font-size: var(--font-size28);
+    }
+    .label-input__form{
+        height: 32px;
+    }
+    .label-error{
+        font-size: var(--font-size20);
+        padding: var(--padding10-20-0);
+    }
+}
